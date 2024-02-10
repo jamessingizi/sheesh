@@ -3,8 +3,8 @@ from rich import print
 from rich.console import Console
 from rich.table import Table
 
-from swoosh.app import app
-from swoosh.crypt.crypto_utils import (
+from sheesh.app import app
+from sheesh.crypt.crypto_utils import (
     analyze_password,
     bcrypt_compare,
     bcrypt_encrypt,

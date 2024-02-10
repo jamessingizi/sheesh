@@ -1,14 +1,20 @@
 from typer.testing import CliRunner
 
-from swoosh.general.general import app
+from sheesh.general.general import app
 
 runner = CliRunner()
 
 
-def test_slug():
-    result = runner.invoke(app, ["slugify", "this is swoosh"])
+def test_version():
+    result = runner.invoke(app, ["version"])
     assert result.exit_code == 0
-    assert result.stdout == "this-is-swoosh\n"
+    assert "sheesh version" in result.stdout
+
+
+def test_slug():
+    result = runner.invoke(app, ["slugify", "this is sheesh"])
+    assert result.exit_code == 0
+    assert result.stdout == "this-is-sheesh\n"
 
 
 def test_password():

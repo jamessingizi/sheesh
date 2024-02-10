@@ -1,6 +1,6 @@
 from typer.testing import CliRunner
 
-from swoosh.crypt.crypt import app
+from sheesh.crypt.crypt import app
 
 runner = CliRunner()
 

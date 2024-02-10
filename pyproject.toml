@@ -1,28 +1,27 @@
 [tool.poetry]
-name = "swoosh"
-version = "0.0.1"
-description = "a collection of tools to perform daily tasksin the command line"
+name = "sheesh"
+version = "0.0.2"
+description = "a collection of useful tools to perform tasks in the command line"
 authors = ["James <jsingizi7@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
 classifiers = [
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",
 	"Operating System :: OS Independent",
 ]
-keywords = ["swoosh"]
+keywords = ["sheesh"]
 
 [project.urls]
-Homepage = "https://github.com/jamessingizi/swoosh"
-Issues = "https://github.com/jamessingizi/swoosh/issues"
+Homepage = "https://github.com/jamessingizi/sheesh"
+Issues = "https://github.com/jamessingizi/sheesh/issues"
 
 [tool.poetry.scripts]
-swoosh = "swoosh.main:app"
+sheesh = "sheesh.main:app"
 
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 typer = {extras = ["all"], version = "^0.9.0"}
 ulid-py = "^1.1.0"
 bcrypt = "^4.1.2"
@@ -76,13 +75,13 @@ combine_as_imports = true
 
 
 [tool.poe.tasks]
-test = "pytest --cov-report term-missing --cov-config=.coveragerc --cov=swoosh --disable-warnings"
-test-html = "pytest --cov-report html --cov-config=.coveragerc --cov=swoosh --disable-warnings"
-"lint:ruff" = "ruff check swoosh/ tests/"
+test = "pytest --cov-report term-missing --cov-config=.coveragerc --cov=sheesh --disable-warnings"
+test-html = "pytest --cov-report html --cov-config=.coveragerc --cov=sheesh --disable-warnings"
+"lint:ruff" = "ruff check sheesh/ tests/"
 "lint:black" = "black --check --diff ."
-"lint:mypy"  = "mypy swoosh/ tests/"
+"lint:mypy"  = "mypy sheesh/ tests/"
 lint = ["lint:ruff", "lint:mypy", "lint:black"]
-"fix:ruff" = "ruff check swoosh/ tests/ --fix"
+"fix:ruff" = "ruff check sheesh/ tests/ --fix"
 "fix:black" = "black ."
 "fix:isort" = "isort ."
 fix = ["fix:ruff", "fix:black", "fix:isort"]

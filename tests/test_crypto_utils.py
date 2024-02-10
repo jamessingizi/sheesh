@@ -3,7 +3,7 @@ import uuid
 import pytest
 import ulid
 
-from swoosh.crypt.crypto_utils import (
+from sheesh.crypt.crypto_utils import (
     calculate_charset_size,
     convert_seconds,
     decrypt_text,
